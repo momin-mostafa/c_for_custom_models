@@ -28,10 +28,3 @@ public:
 
   PThreadInC() {}
 };
-
-
-
-int main() {
-  PThreadInC pThreadInC = PThreadInC();
-  return pThreadInC.run();
-}

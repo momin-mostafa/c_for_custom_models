@@ -2,8 +2,8 @@ CXX = g++
 CXXFLAGS = -std=c++20 -Wall -Wextra
 
 threadInC: src/pthread_in_c_example.cpp
-	$(CXX) $(CXXFLAGS) -o threadInC src/pthread_in_c_example.cpp
-	./threadInC
+	$(CXX) $(CXXFLAGS) -o main main.cpp src/pthread_in_c_example.cpp
+	./main
 
 main: main.cpp
 	$(CXX) $(CXXFLAGS) -o main main.cpp
