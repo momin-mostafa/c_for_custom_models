@@ -1,29 +1,12 @@
-#include <cstddef>
-#include <cstdio>
-#include <iostream>
-#include <pthread.h>
-#include <sys/_pthread/_pthread_t.h>
+// #include <cstddef>
+// #include <cstdio>
 
 
-void* heavyComputation(void* arg){
-    for (auto i = 0; i < 500; i++) {
-        std::cout << "heavyComputation: " << i << std::endl;
-    }
-    return NULL;
-}
+// #include <sys/_pthread/_pthread_t.h>
 
-void* mainComputation(void* arg){
-    for (auto i = 0; i < 500; i++) {
-        std::cout << "mainComputation: " << i << std::endl;
-    }
-    return NULL;
-}
+#include "src/pthread_in_c_example.cpp"
 
 int main() {
-    pthread_t thread0;
-    pthread_create(&thread0,NULL,heavyComputation,NULL);
-    mainComputation(NULL);
-    pthread_join(thread0,NULL);
-    std::cout << "Code Exiting Successfully" << std::endl;
-    return 0;
+  PThreadInC pThreadInC = PThreadInC();
+  return pThreadInC.run();
 }
