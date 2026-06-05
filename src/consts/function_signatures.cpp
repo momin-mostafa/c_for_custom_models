@@ -1,0 +1,1 @@
+using threadFunction = void *(*)(void *);
